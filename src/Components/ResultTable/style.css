@@ -1,0 +1,21 @@
+.ResultTable{
+    width: 100%;
+    
+    background-color: rgb(243, 243, 243);
+    padding: 10px;
+}
+.ResultTable > .containerData{
+    width: 100%;
+    display: flex;
+    gap: 2px;
+    border: 1px solid rgb(216, 216, 216);
+    /* padding: 20px; */
+}
+.containerData > .container{
+    width: 100%;
+    padding: 10px;
+    /* border: 1px solid rgb(207, 207, 207); */
+    background-color: white;
+    text-align: center;
+    font-weight: 550;
+}
