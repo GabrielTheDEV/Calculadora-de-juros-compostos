@@ -8,8 +8,16 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
+FORMULA :
 
--comp pai
--comp calculadora
-comp tabela
-comp grafico
+M = C.( 1 + T )**p
+
+M = C + J 
+
+J = M - C
+
+M = montante
+C = capitão aplicado
+T = taxa de juros composto
+p = periodo
+J = juros composto

@@ -1,16 +1,25 @@
-
+import { useEffect, useState } from 'react'
 import { Calculator } from './Components/Calculator/calculator'
 import { ResultTable } from './Components/ResultTable/ResultTable'
 import { useCalculateReducer } from './Hooks/calculateReducer'
 
 export function Layout() {
-  const { state, setField, calculate } = useCalculateReducer()
+  const { setField, sendOut} = useCalculateReducer()
+  const [result , setResult] = useState(0)
 
-  function handleReceiveValue( value ){
-      Object.entries(value).forEach(([field , value ]) => setField(field , value) )
-      
-      console.log(state)
+  useEffect(() => {
+    setResult(sendOut())
+    
+  },[sendOut])
+
+  const handleReceiveValue = ( value ) => {
+      Object.entries(value).forEach(
+        ([field , value ]) => {
+           setField(field , value)
+          } 
+      )
   }
+  
 
   return ( 
     <section className='main'>
@@ -18,7 +27,7 @@ export function Layout() {
         
       <div className='content'>
         <Calculator takeValue={handleReceiveValue}/>
-        <ResultTable data={ calculate }/>
+        <ResultTable datas={result}/>
       </div> 
     </section>
   )

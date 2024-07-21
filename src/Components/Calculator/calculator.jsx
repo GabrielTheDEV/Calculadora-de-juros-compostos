@@ -1,5 +1,5 @@
 import React,{ useState } from 'react'
-
+import { InputComponent } from '../InputComponent'
 import './style.css'
 
 
@@ -21,48 +21,44 @@ export function Calculator( {takeValue} ){
     }
 
     function handleClick() {
-        if(values.initial > 0 && values.rate > 0 && values.period > 0) {
+        if(values.initial > 0 && values.rate > 0 && values.period > 0) { // Verifica se os seguintes campos estão prenchidos
             return takeValue(values)
-            
+
         } else{
-            return console.log('incomplete field :/')
+            return alert('algum campo esta faltando')
         }
     }
 
     return(
         <div className='calculator'>
                 
-                <p>Valor inicial :</p>
-                <input type="text" 
-                    name='initial'
-                    onChange={handleChange}
-                    placeholder='R$0' 
-                />
-
-                <p>Aportes mensais :</p>
-                <input type="text" 
-                    name='monthly'
-                    onChange={handleChange}
-                    placeholder='R$0' 
-                />
-
-                <p>taxa de juros :</p>
-                <input type="text" 
-                    name='rate'
-                    onChange={handleChange}
-                    placeholder='0,00%' 
-                />
-                
-                <p>Período :</p>
-                <input type="text" 
-                    name='period'
-                    onChange={handleChange}
-                    placeholder='0' 
-                />
-                
+            <InputComponent 
+                label={'Valor inicial'} 
+                name={'initial'} 
+                handle={handleChange} 
+                placeholder={'R$0'}
+            />
+             <InputComponent 
+                label={'Aportes mensais'} 
+                name={'monthly'} 
+                handle={handleChange} 
+                placeholder={'R$0'}
+            />    
+            <InputComponent
+                label={'Taxa de juros'} 
+                name={'rate'} 
+                handle={handleChange} 
+                placeholder={'0%'}
+            />
+             <InputComponent
+                label={'Período'} 
+                name={'period'} 
+                handle={handleChange} 
+                placeholder={'0'}
+            />    
 
                 <div className='checkboxConteiner'>
-                    <input type="checkbox" name="x" id="x" />
+                    <input type="checkbox" name="x" id="x" onClick />
                     <span>Calculo automatico</span>
                 </div>
                 

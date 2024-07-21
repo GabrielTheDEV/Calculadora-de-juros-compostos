@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './style.css'
-import { DataGrid } from '../DataGrid/DataGrid'
 
 export function ResultTable({datas}){
-
+    if(datas === undefined){
+        return <div>Loading...</div>
+    }
 
     return(
         <div className='ResultTable'>
+            <span>Valor final: {datas.toFixed(2)}</span>
+           
+            
             <div className='containerData'>
                <div className='container'><span>Meses</span></div>
                <div className='container'><span>Juros</span></div>
@@ -15,7 +19,7 @@ export function ResultTable({datas}){
                <div className='container'><span>Total acumulado</span></div>
             </div>
 
-           {datas && datas.map(log =>{
+           {/* {result.map(log =>{
                 return(
                   <div className='containerData' key={log.id} >
                         <div className='container'><span>{log.mounth}</span></div>
@@ -25,7 +29,7 @@ export function ResultTable({datas}){
                         <div className='container'><span>{log.accumulated}</span></div>
                     </div>
                 )
-           })} 
+           })}  */}
         </div>
     )
 }
