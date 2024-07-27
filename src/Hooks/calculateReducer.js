@@ -1,5 +1,4 @@
 import { useMemo, useReducer } from "react";
-// import { Calculator } from "../Components/Calculator/calculator";
 
 function reducer( state , action ){
     switch(action.type){
