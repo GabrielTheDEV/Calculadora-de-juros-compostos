@@ -15,5 +15,5 @@ MT = montante
 C = capital aplicado
 T = taxa de juros composto
 p = periodo
-J = juros composto
+
 
