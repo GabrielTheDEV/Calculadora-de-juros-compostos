@@ -1,33 +1,17 @@
-import React,{ useState } from 'react'
+import React,{ useContext } from 'react'
 import { InputComponent } from '../InputComponent'
+import { MyContext } from '../../context/Context'
+
 import './style.css'
 
-
-
-export function Calculator( {takeValue} ){
-    const [values , setValues] = useState({
-        initial: 0,
-        monthly: 0,
-        rate: 0,
-        period: 0
-    })
-
-    function handleChange(e) {
-        const {name , value } = e.target
-
-       setValues( prev => ({
-            ...prev, [name]: value
-       }))
+export function Calculator(){
+    const { setField, handleClick } = useContext(MyContext)
+   
+    const handleChange = (e) => {
+        const {name , value } = e.target         
+           setField(name ,value)
     }
 
-    function handleClick() {
-        if(values.initial > 0 && values.rate > 0 && values.period > 0) { // Verifica se os seguintes campos estão prenchidos
-            return takeValue(values)
-
-        } else{
-            return alert('algum campo esta faltando')
-        }
-    }
 
     return(
         <div className='calculator'>

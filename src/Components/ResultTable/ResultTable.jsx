@@ -1,15 +1,21 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import './style.css'
+import { MyContext } from '../../context/Context'
 
-export function ResultTable({datas}){
-    if(datas === undefined){
+export function ResultTable(){
+    const {sendOut} = useContext(MyContext)
+
+    if(sendOut === undefined){
         return <div>Loading...</div>
     }
-
+   
     return(
         <div className='ResultTable'>
-            <span>Valor final: {datas.toFixed(2)}</span>
-           
+            <div className='containerResult'>
+               <div className='container'><span>Valor Total final : <br/> {sendOut.result ? sendOut.result.toFixed(2) : '0,00'}</span></div>
+               <div className='container'><span>Valor total investido :<br/> {sendOut.totalInv ? sendOut.totalInv.toFixed(2) : '0,00'}</span></div>
+               <div className='container'><span>Total de juros : <br/> {sendOut.totalRate ? sendOut.totalRate.toFixed(2) : '0,00'}</span></div>
+            </div>
             
             <div className='containerData'>
                <div className='container'><span>Meses</span></div>
@@ -19,6 +25,7 @@ export function ResultTable({datas}){
                <div className='container'><span>Total acumulado</span></div>
             </div>
 
+            
            {/* {result.map(log =>{
                 return(
                   <div className='containerData' key={log.id} >
