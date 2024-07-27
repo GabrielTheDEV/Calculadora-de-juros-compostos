@@ -5,18 +5,18 @@ import { MyContext } from '../../context/Context'
 import './style.css'
 
 export function Calculator(){
-    const { setField, handleClick } = useContext(MyContext)
+    const { setField, handleClick } = useContext(MyContext)  
    
+
     const handleChange = (e) => {
         const {name , value } = e.target         
            setField(name ,value)
     }
 
-
     return(
         <div className='calculator'>
                 
-            <InputComponent 
+            <InputComponent     // <-- Componente do input
                 label={'Valor inicial'} 
                 name={'initial'} 
                 handle={handleChange} 
@@ -42,7 +42,7 @@ export function Calculator(){
             />    
 
                 <div className='checkboxConteiner'>
-                    <input type="checkbox" name="x" id="x" onClick />
+                    <input type="checkbox" name="..." id="..." onClick />
                     <span>Calculo automatico</span>
                 </div>
                 

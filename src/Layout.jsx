@@ -12,8 +12,10 @@ export function Layout() {
         
       <div className='content'>
         <ContextProvider>
+
             <Calculator />
             <ResultTable />
+            
         </ContextProvider>
       </div> 
     </section>

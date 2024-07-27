@@ -12,18 +12,19 @@ function reducer( state , action ){
             const totalRatex = resultx - initial + monthly * period
 
             return{...state, result: resultx, totalInv: totalInvx , totalRate: totalRatex}
+
         default:
             return state
     }
 } 
 
-
 export function useCalculateReducer(){
     const [state , dispatch] = useReducer( reducer , {
         initial: 0,
         monthly: 0,
-        rate: 0,
         period: 0,
+        rate:  0,
+        
         result: 0,
         totalInv: 0,
         totalRate: 0
@@ -31,11 +32,10 @@ export function useCalculateReducer(){
 
     const setField = (field , value) => {
         dispatch({type: 'GET_VALUE', field , value})
-        
     }
     const calculate = () => {
          dispatch({type: 'CALCULATE' })
-         console.log('Calculate...')
+        //  console.log('Working...')
     }
 
     const sendOut = useMemo(() => ({
