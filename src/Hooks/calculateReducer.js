@@ -1,4 +1,4 @@
-import { useMemo, useReducer } from "react";
+import { useReducer } from "react";
 
 function reducer( state , action ){
     switch(action.type){
@@ -35,16 +35,13 @@ export function useCalculateReducer(){
     }
     const calculate = () => {
          dispatch({type: 'CALCULATE' })
-        //  console.log('Working...')
     }
 
-    const sendOut = useMemo(() => ({
+    const sendOut = {
         result: state.result,
         totalInv: state.totalInv,
-        totalRate : state.totalRate
-    
-    }),[state.result, state.totalInv, state.totalRate])
-    
+        totalRate: state.totalRate
+    }
 
     return { 
         state,

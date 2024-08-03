@@ -4,7 +4,7 @@ import { MyContext } from '../../context/Context'
 
 export function ResultTable(){
     const {sendOut} = useContext(MyContext)
-
+    
     if(sendOut === undefined){
         return <div>Loading...</div>
     }
