@@ -1,10 +1,9 @@
 import React from 'react'
-import './style.css'
 
 export function Header(){
 
     return(
-        <header>
+        <header className='w-full p-8'>
             <span>...</span>
         </header>
     )

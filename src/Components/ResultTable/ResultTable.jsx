@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import './style.css'
 import { MyContext } from '../../context/Context'
 
 export function ResultTable(){
@@ -10,19 +9,19 @@ export function ResultTable(){
     }
    
     return(
-        <div className='ResultTable'>
-            <div className='containerResult'>
-               <div className='container'><span>Valor Total final : <br/> {sendOut.result ? sendOut.result.toFixed(2) : '0,00'}</span></div>
-               <div className='container'><span>Valor total investido :<br/> {sendOut.totalInv ? sendOut.totalInv.toFixed(2) : '0,00'}</span></div>
-               <div className='container'><span>Total de juros : <br/> {sendOut.totalRate ? sendOut.totalRate.toFixed(2) : '0,00'}</span></div>
+        <div className='w-full p-5 border border-black'>
+            <div className='w-full flex items-center justify-center gap-2'>
+               <div className='w-full text-center font-medium p-2.5 border-b hover:border-black bg-white'><span>Valor Total final : <br/> {sendOut.result ? sendOut.result.toFixed(2) : '0,00'}</span></div>
+               <div className='w-full text-center font-medium p-2.5 border-b hover:border-black bg-white'><span>Valor total investido :<br/> {sendOut.totalInv ? sendOut.totalInv.toFixed(2) : '0,00'}</span></div>
+               <div className='w-full text-center font-medium p-2.5 border-b hover:border-black bg-white'><span>Total de juros : <br/> {sendOut.totalRate ? sendOut.totalRate.toFixed(2) : '0,00'}</span></div>
             </div>
             
-            <div className='containerData'>
-               <div className='container'><span>Meses</span></div>
-               <div className='container'><span>Juros</span></div>
-               <div className='container'><span>Total investido</span></div>
-               <div className='container'><span>Juros total</span></div>
-               <div className='container'><span>Total acumulado</span></div>
+            <div className='w-full flex items-center my-2 p-2 border-b border-black'>
+               <div className='w-full p-2.5 bg-white text-center font-medium'><span>Meses</span></div>
+               <div className='w-full p-2.5 bg-white text-center font-medium'><span>Juros</span></div>
+               <div className='w-full p-2.5 bg-white text-center font-medium'><span>Total investido</span></div>
+               <div className='w-full p-2.5 bg-white text-center font-medium'><span>Juros total</span></div>
+               <div className='w-full p-2.5 bg-white text-center font-medium'><span>Total acumulado</span></div>
             </div>
 
             

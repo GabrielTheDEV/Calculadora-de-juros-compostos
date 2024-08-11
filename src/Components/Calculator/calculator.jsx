@@ -2,8 +2,6 @@ import React,{ useContext } from 'react'
 import { InputComponent } from '../InputComponent'
 import { MyContext } from '../../context/Context'
 
-import './style.css'
-
 export function Calculator(){
     const { setField, handleClick } = useContext(MyContext)  
    
@@ -14,7 +12,7 @@ export function Calculator(){
     }
 
     return(
-        <div className='calculator'>
+        <div className='w-full h-auto flex flex-col p-2.5 gap-2'>
                 
             <InputComponent     // <-- Componente do input
                 label={'Valor inicial'} 
@@ -41,13 +39,14 @@ export function Calculator(){
                 placeholder={'0'}
             />    
 
-                <div className='checkboxConteiner'>
+                <div className='flex gap-2.5 my-2.5'>
                     <input type="checkbox" name="..." id="..." onClick />
                     <span>Calculo automatico</span>
                 </div>
                 
 
-                <button onClick={handleClick}> Calcular </button>
+                <button onClick={handleClick} className=' w-80 p-2.5 rounded-full bg-green-600 text-white text-lg font-medium hover:bg-green-800  '
+                > Calcular </button>
 
         </div>
     )
