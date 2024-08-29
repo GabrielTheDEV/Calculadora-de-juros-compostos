@@ -1,20 +1,20 @@
 import React from 'react'
 import { Calculator } from './Components/Calculator/calculator'
-import { ResultTable } from './Components/ResultTable/ResultTable'
+import { Table } from './Components/Table/Table'
 import { ContextProvider } from './context/Context'
 
 
 export function Layout() {
 
   return ( 
-    <section className='main'>
-      <h1>Calculadora de Juros Compostos</h1>
+    <section className='mx-10'>
+      <h1 className='font-medium '>Calculadora de Juros Compostos</h1>
         
-      <div className='content'>
+      <div className='w-full h-auto lg:flex p-10'>
         <ContextProvider>
 
             <Calculator />
-            <ResultTable />
+            <Table />
             
         </ContextProvider>
       </div> 
