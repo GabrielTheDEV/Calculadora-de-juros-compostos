@@ -22,9 +22,9 @@ export function Table(){
                 </div>
             </div>
             
-            <div class="w-full max-w-4xl bg-white rounded-lg overflow-y-auto">
-                <table class="w-full table-auto border-collapse">
-                    <thead class="bg-green-600 text-white">
+            <div class="w-full max-w-4xl max-h-80 bg-white rounded-lg overflow-y-scroll">
+                <table class="w-full table-auto border-collapse ">
+                    <thead class="sticky top-0 bg-green-600 text-white">
                         <tr>
                             <th className="px-4 py-2">Meses</th>
                             <th className="px-4 py-2">Juros</th>
@@ -37,11 +37,11 @@ export function Table(){
                     <tbody>
                         {sendOut.table && sendOut.table.map((data , index) => (
                             <tr key={index} className="bg-gray-50 hover:bg-gray-100">
-                                <td className="p-4">{data.period}</td>
-                                <td className="p-4">{0}</td>
-                                <td className="p-4">{data.amount}</td>
-                                <td className="p-4">{data.totalRate}</td>
-                                <td className="p-4">{data.totalInv}</td>
+                                <td className="text-center p-4">{data.period}</td>
+                                <td className="text-center p-4">{'indefinido'}</td>
+                                <td className="text-center p-4">{data.amount}</td>
+                                <td className="text-center p-4">{data.totalRate}</td>
+                                <td className="text-center p-4">{data.totalInv}</td>
                             </tr>
                         ))}
                     </tbody>
